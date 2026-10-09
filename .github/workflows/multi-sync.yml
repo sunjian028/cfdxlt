@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   sync:
-    if: github.repository == 'sunjian028/cfnew'
+    if: github.repository == 'sunjian028/cfdxlt'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -31,6 +31,6 @@ jobs:
             -f branch=main | tee "$RUNNER_TEMP/upstream-sync.json"
           {
             echo "## Upstream sync"
-            echo "Source: byJoey/cfnew → sunjian028/cfnew (main)"
+            echo "Source: byJoey/cfnew → sunjian028/cfdxlt (main)"
             jq -r '.message' "$RUNNER_TEMP/upstream-sync.json"
           } >> "$GITHUB_STEP_SUMMARY"
